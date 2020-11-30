@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,12 +31,14 @@
     "express": "^4.17.1",
     "graphql": "^15.4.0",
     "grunt": "^1.3.0",
+    "helmet": "^4.2.0",
     "jade": "^1.11.0",
     "jshint": "^2.12.0",
     "mongoose": "^5.10.18",
     "morgan": "^1.10.0",
     "nodeenv": "^3.0.30",
     "qrcode": "^1.4.4",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "yup": "^0.31.0"
   }
 }
