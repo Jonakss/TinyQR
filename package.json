@@ -1,0 +1,39 @@
+{
+  "name": "tinyqr",
+  "version": "1.0.0",
+  "description": "Link shortener with QR codes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonakss/TinyQR.git"
+  },
+  "keywords": [
+    "QR",
+    "Link-Shortener",
+    "TinyQr",
+    "Tiny",
+    "URL"
+  ],
+  "author": "Jonathan Correa Paiva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jonakss/TinyQR/issues"
+  },
+  "homepage": "https://github.com/Jonakss/TinyQR#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.4.0",
+    "grunt": "^1.3.0",
+    "jade": "^1.11.0",
+    "jshint": "^2.12.0",
+    "mongoose": "^5.10.18",
+    "morgan": "^1.10.0",
+    "nodeenv": "^3.0.30",
+    "qrcode": "^1.4.4"
+  }
+}
