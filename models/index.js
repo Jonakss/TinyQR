@@ -1,7 +1,20 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
+const MongoClient = require('mongodb').MongoClient;
 
-const Cat = mongoose.model('Cat', { name: String });
+// Connection URL
+const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
 
-const kitty = new Cat({ name: 'Zildjian' });
-kitty.save().then(() => console.log('meow'));
+// Database Name
+const dbName = process.env.DB_NAME;
+
+// Create a new MongoClient
+const client = new MongoClient(url);
+
+// Use connect method to connect to the Server
+client.connect(function(err) {
+  //assert.equal(null, err);
+  console.log("Connected successfully to server");
+
+  const db = client.db(dbName);
+
+  client.close();
+});

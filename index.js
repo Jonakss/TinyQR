@@ -15,6 +15,8 @@ app.set('views', path.join(__dirname, '/views'));
 
 require('./routes')(app);
 
+require('./models');
+
 app.listen(process.env.PORT, () => {
     console.log('Listen on port: ' + process.env.PORT);
 });
