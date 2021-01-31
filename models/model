@@ -1,3 +1,0 @@
-db.craeteCollection('qr',{
-    autoindex: true
-})

@@ -1,4 +1,4 @@
-qr = require('qrcode');
+var qrController = require('../controllers/qrController.js');
 
 module.exports = router => {
     router.route("/")
@@ -8,11 +8,11 @@ module.exports = router => {
 
     router.route('/qr/:text')
     .get((req, res) => {
-        var qrValue ='QR de prueba';
-        qr.toDataURL(req.params.text, function (err, qrData) {
-          res.render('qr', {
-              "qrData":qrData,
-              "qrValue": req.params.text
+        var qrValue = req.params.text || 'QR de prueba';
+        qrController.getQrData(qrValue).then(qrData => {
+            res.render('qr', {
+                "qrData": qrData,
+                "qrValue": qrValue
             });
         });
     });

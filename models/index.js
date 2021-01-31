@@ -1,20 +1,11 @@
-const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
 
-// Connection URL
-const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
+mongoose.connect('mongodb://'+process.env.DB_HOST + ':' + process.env.DB_PORT + '/' + process.env.DB_NAME, {useNewUrlParser: true, useUnifiedTopology: true});
 
-// Database Name
-const dbName = process.env.DB_NAME;
+const db = mongoose.connection;
 
-// Create a new MongoClient
-const client = new MongoClient(url);
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('Connected');
 
-// Use connect method to connect to the Server
-client.connect(function(err) {
-  //assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  const db = client.db(dbName);
-
-  client.close();
 });
